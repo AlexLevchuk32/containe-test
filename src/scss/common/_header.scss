@@ -1,0 +1,130 @@
+@use '../base/common' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+//==========================================================================================================================================================
+.header {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	right: 20px;
+	max-width: 100%;
+	height: 60px;
+	z-index: 30;
+	// header__container
+	&__container {
+		backdrop-filter: blur(20px);
+		background-color: $color-header-bg;
+		border: 1px solid $color-white-muted;
+		border-radius: 5px;
+	}
+	// .header__inner
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+	}
+	// .header__logo
+	&__logo {
+		max-width: 90px;
+		height: auto;
+	}
+	// .header__logo-link
+	&__logo-link {
+	}
+	// .header__logo-img
+	&__logo-img {
+	}
+	// .header__menu
+	&__menu {
+		display: flex;
+		column-gap: 35px;
+		height: 100%;
+	}
+	// .header__menu-item
+	&__menu-item.header__menu-item {
+		position: relative;
+		height: 100%;
+		padding: 20px 5px;
+		color: $color-grey;
+		transition: 0.3s ease;
+		&:hover {
+			color: $color-white;
+		}
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 2px;
+			width: 100%;
+			height: 2px;
+			background-color: $color-blue;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.3s ease;
+		}
+	}
+	// .header__callback-btn
+	&__callback-btn {
+		display: flex;
+		align-items: center;
+		column-gap: 10px;
+		padding: 6px 10px;
+		max-width: 102px;
+		height: 32px;
+		border: 1px solid $color-white;
+		border-radius: 5px;
+		background-color: $color-white;
+		transition: 0.3s ease;
+		&:hover {
+			background-color: $color-header-bg;
+			.callback-btn__text {
+				color: $color-white;
+			}
+		}
+	}
+	// .header__btns
+	&__btns {
+		display: flex;
+		column-gap: 10px;
+	}
+	// .header__login-btn
+	&__login-btn {
+		padding: 6px 10px;
+		max-width: 48px;
+		height: 32px;
+		border-radius: 5px;
+		border: 1px solid $color-white-muted-2;
+		transition: 0.3s ease;
+		&:hover {
+			color: $color-black;
+			background-color: $color-white;
+		}
+	}
+	// .header__burger-btn
+	&__burger-btn {
+	}
+	// .header__burger-line
+	&__burger-line {
+	}
+}
+.menu-item--active.menu-item--active {
+	color: $color-white;
+	&::after {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.callback-btn {
+	// .callback-btn__text
+	&__text {
+		font-weight: 500;
+		color: $color-black;
+		white-space: nowrap;
+		transition: 0.3s ease;
+	}
+	// .callback-btn__img
+	&__img {
+	}
+}
