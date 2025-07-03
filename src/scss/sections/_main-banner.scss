@@ -1,0 +1,143 @@
+@use '../base/common' as *;
+@use '../base/mixins' as *;
+@use '../base/variables' as *;
+
+//==========================================================================================================================================================
+.main-banner {
+	margin-top: 120px;
+	// .main-banner__bg
+	&__bg {
+		z-index: -1;
+	}
+	// .main-banner__bg-img
+	&__bg-img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	// .main-banner__container
+	&__container {
+		position: relative;
+		padding: 0 20px;
+	}
+	// .main-banner__inner
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	// .main-banner__title
+	&__title {
+		margin-left: -30px;
+		font-weight: 600;
+		// font-size: rem(402);
+		font-size: calc(100vw / (1920 / 405));
+		line-height: 1;
+		letter-spacing: -0.1em;
+		text-transform: uppercase;
+		text-align: center;
+		background: linear-gradient(180deg, #dbdddd 0%, #505e79 100%);
+		background-clip: text;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		white-space: nowrap;
+	}
+	// .main-banner__top
+	&__top {
+	}
+	// .main-banner__quote
+	&__quote {
+	}
+	// .main-banner__quote-text
+	&__quote-text {
+	}
+	// .main-banner__quote-author
+	&__quote-author {
+	}
+	// .main-banner__content
+	&__content {
+	}
+	// .main-banner__center
+	&__center {
+	}
+	// .main-banner__center-img
+	&__center-img {
+	}
+	// .main-banner__company
+	&__company {
+	}
+	// .main-banner__bottom
+	&__bottom {
+	}
+	// .main-banner__bottom-item
+	&__bottom-item {
+	}
+}
+.section-bg {
+}
+.container {
+}
+.delivery-company {
+	// .delivery-company__line
+	&__line {
+	}
+	// .delivery-company__title
+	&__title {
+	}
+	// .delivery-company__descr
+	&__descr {
+	}
+	// .delivery-company__img
+	&__img {
+	}
+}
+.dhl-company {
+}
+.fedex-company {
+}
+.amazon-company {
+}
+.bottom-item {
+	// .bottom-item__descr
+	&__descr {
+	}
+	// .bottom-item__text
+	&__text {
+	}
+	// .bottom-item__count
+	&__count {
+	}
+}
+.why-us {
+	// .why-us__descr
+	&__descr {
+	}
+	// .why-us__text
+	&__text {
+	}
+	// .why-us__text--white
+	&__text--white {
+	}
+}
+.leading-way {
+	// .leading-way__col
+	&__col {
+	}
+	// .leading-way__text
+	&__text {
+	}
+	// .leading-way__descr
+	&__descr {
+	}
+	// .leading-way__count
+	&__count {
+	}
+}
+
+//==========================================================================================================================================================
+// Адаптив
+@media (min-width: 1920.98px) {
+	.main-banner__title {
+		font-size: rem(415);
+	}
+}
