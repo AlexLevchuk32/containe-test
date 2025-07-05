@@ -4,7 +4,9 @@
 
 //==========================================================================================================================================================
 .main-banner {
-	margin-top: 105px;
+	height: 1246px;
+	padding-top: 457px;
+	padding-top: min(calc(100vw / (1920 / 457)), max(457px));
 	padding-bottom: 20px;
 	// .main-banner__bg
 	&__bg {
@@ -18,22 +20,27 @@
 	}
 	// .main-banner__container
 	&__container {
-		position: relative;
 		padding: 0 20px;
+		height: 100%;
 	}
 	// .main-banner__inner
 	&__inner {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		// height: 100vh;
+		height: 100%;
 	}
 	// .main-banner__title
 	&__title {
-		margin-left: -30px;
+		position: absolute;
+		top: 25px;
+		display: flex;
+		justify-self: center;
+		margin-left: -33px;
 		font-weight: 600;
 		// font-size: rem(402);
-		font-size: calc(100vw / (1920 / 405));
-		// line-height: 1;
+		font-size: calc(100vw / (1920 / 402));
 		line-height: normal;
 		letter-spacing: -0.1em;
 		text-transform: uppercase;
@@ -50,7 +57,6 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		top: -45px;
 	}
 	// .main-banner__quote
 	&__quote {
@@ -107,19 +113,24 @@
 	// .main-banner__content
 	&__content {
 		position: absolute;
-		top: -105px;
+		top: 0;
+		max-height: 860px;
 	}
 	// .main-banner__center
 	&__center {
+		position: relative;
 	}
 	// .main-banner__center-img
 	&__center-img {
 	}
 	// .main-banner__company
 	&__company {
+		display: flex;
 	}
+
 	// .main-banner__bottom
 	&__bottom {
+		margin-top: auto;
 		position: relative;
 		display: flex;
 		justify-content: space-between;
@@ -154,24 +165,80 @@
 }
 
 .delivery-company {
+	position: relative;
+	// .delivery-company__info
+	&__info {
+		max-width: 300px;
+		height: auto;
+		padding: 20px;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 5px;
+		backdrop-filter: blur(20px);
+		background: rgba(84, 112, 137, 0.15);
+	}
 	// .delivery-company__line
 	&__line {
+		position: absolute;
 	}
 	// .delivery-company__title
 	&__title {
+		font-weight: 500;
+		font-size: rem(26);
+		line-height: 100%;
+		text-transform: uppercase;
+		margin-bottom: 10px;
 	}
 	// .delivery-company__descr
 	&__descr {
+		font-weight: 400;
+		font-size: rem(15);
+		line-height: 120%;
+		color: $color-grey;
+		margin-bottom: 60px;
 	}
 	// .delivery-company__img
 	&__img {
 	}
 }
 .dhl-company {
+	position: absolute;
+	bottom: -22px;
+	left: -495px;
+	max-width: 520px;
+	width: 100%;
+	max-height: 222px;
+	.delivery-company__line {
+		top: 0;
+		right: 0;
+	}
 }
 .fedex-company {
+	position: absolute;
+	bottom: -218px;
+	left: 132px;
+	justify-content: flex-end;
+	max-width: 521px;
+	width: 100%;
+	max-height: 236px;
+	.delivery-company__line {
+		top: 0;
+		left: 0;
+		transform: rotateY(180deg);
+	}
 }
 .amazon-company {
+	position: absolute;
+	bottom: -107px;
+	right: -497px;
+	justify-content: flex-end;
+	max-width: 521px;
+	width: 100%;
+	max-height: 210px;
+	.delivery-company__line {
+		top: 0;
+		left: 0;
+		transform: rotateY(180deg);
+	}
 }
 .bottom-item {
 	// .bottom-item__descr
@@ -270,6 +337,9 @@
 //==========================================================================================================================================================
 // Адаптив
 @media (min-width: 1920.98px) {
+	.main-banner__container {
+		padding: 0;
+	}
 	.main-banner__title {
 		font-size: rem(415);
 	}
