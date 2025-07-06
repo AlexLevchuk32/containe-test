@@ -4,7 +4,8 @@
 
 //==========================================================================================================================================================
 .main-banner {
-	height: 1246px;
+	max-height: 1246px;
+	min-height: 100%;
 	padding-top: 457px;
 	padding-top: min(calc(100vw / (1920 / 457)), max(457px));
 	padding-bottom: 20px;
@@ -27,6 +28,7 @@
 	&__inner {
 		display: flex;
 		flex-direction: column;
+		justify-content: space-between;
 		align-items: center;
 		// height: 100vh;
 		height: 100%;
@@ -57,6 +59,7 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+		margin-bottom: 538px;
 	}
 	// .main-banner__quote
 	&__quote {
@@ -114,18 +117,29 @@
 	&__content {
 		position: absolute;
 		top: 0;
+		display: flex;
+		justify-content: center;
+		width: calc(100vw / (1920 / 801));
 		max-height: 860px;
 	}
 	// .main-banner__center
 	&__center {
 		position: relative;
+		max-width: 100%;
 	}
 	// .main-banner__center-img
 	&__center-img {
 	}
 	// .main-banner__company
 	&__company {
-		display: flex;
+	}
+	// .main-banner__shadow
+	&__shadow {
+		position: absolute;
+		bottom: -185px;
+		left: 0;
+		right: 0;
+		z-index: -1;
 	}
 
 	// .main-banner__bottom
@@ -165,11 +179,18 @@
 }
 
 .delivery-company {
-	position: relative;
+	// .delivery-company__inner
+	&__inner {
+		position: relative;
+		display: flex;
+		align-items: flex-start;
+	}
 	// .delivery-company__info
 	&__info {
-		max-width: 300px;
-		height: auto;
+		// max-width: 300px;
+		// height: auto;
+		flex: 0 1 300px;
+		// width: calc(100vw / (1920 / 300));
 		padding: 20px;
 		border: 1px solid rgba(255, 255, 255, 0.08);
 		border-radius: 5px;
@@ -178,7 +199,9 @@
 	}
 	// .delivery-company__line
 	&__line {
-		position: absolute;
+		// position: absolute;
+		flex: 0 1 220px;
+		// width: calc(100vw / (1920 / 220));
 	}
 	// .delivery-company__title
 	&__title {
@@ -208,21 +231,21 @@
 	width: 100%;
 	max-height: 222px;
 	.delivery-company__line {
-		top: 0;
-		right: 0;
+		// top: 0;
+		// right: 0;
 	}
 }
 .fedex-company {
 	position: absolute;
 	bottom: -218px;
 	left: 132px;
-	justify-content: flex-end;
 	max-width: 521px;
 	width: 100%;
 	max-height: 236px;
+	.delivery-company__inner {
+		justify-content: flex-end;
+	}
 	.delivery-company__line {
-		top: 0;
-		left: 0;
 		transform: rotateY(180deg);
 	}
 }
@@ -230,16 +253,17 @@
 	position: absolute;
 	bottom: -107px;
 	right: -497px;
-	justify-content: flex-end;
 	max-width: 521px;
 	width: 100%;
 	max-height: 210px;
+	.delivery-company__inner {
+		justify-content: flex-end;
+	}
 	.delivery-company__line {
-		top: 0;
-		left: 0;
 		transform: rotateY(180deg);
 	}
 }
+
 .bottom-item {
 	// .bottom-item__descr
 	&__descr {
@@ -342,5 +366,53 @@
 	}
 	.main-banner__title {
 		font-size: rem(415);
+	}
+}
+
+@media (max-width: 1799.98px) {
+	.dhl-company,
+	.fedex-company,
+	.amazon-company {
+		max-width: 480px;
+	}
+	.delivery-company__info {
+		max-width: 280px;
+	}
+	.delivery-company__line {
+		max-width: 200px;
+	}
+	.dhl-company {
+		left: -455px;
+	}
+	.amazon-company {
+		right: -455px;
+	}
+}
+@media (max-width: 1599.98px) {
+	.main-banner {
+		// min-height: 1176px;
+	}
+	.dhl-company,
+	.fedex-company,
+	.amazon-company {
+		max-width: 420px;
+	}
+	.delivery-company__info {
+		max-width: 260px;
+	}
+	.delivery-company__line {
+		max-width: 180px;
+	}
+	.dhl-company {
+		left: -395px;
+	}
+	.amazon-company {
+		right: -395px;
+	}
+	.delivery-company__descr {
+		margin-bottom: 30px;
+	}
+	.main-banner__top {
+		margin-bottom: 468px;
 	}
 }
