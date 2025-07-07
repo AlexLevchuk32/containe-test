@@ -4,9 +4,8 @@
 
 //==========================================================================================================================================================
 .main-banner {
-	max-height: 1246px;
-	min-height: 100%;
-	padding-top: 457px;
+	// max-height: 1246px;
+	// padding-top: 455px;
 	padding-top: min(calc(100vw / (1920 / 457)), max(457px));
 	padding-bottom: 20px;
 	// .main-banner__bg
@@ -59,7 +58,7 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		margin-bottom: 538px;
+		margin-bottom: 535px;
 	}
 	// .main-banner__quote
 	&__quote {
@@ -119,7 +118,6 @@
 		top: 0;
 		display: flex;
 		justify-content: center;
-		width: calc(100vw / (1920 / 801));
 		max-height: 860px;
 	}
 	// .main-banner__center
@@ -197,10 +195,16 @@
 		backdrop-filter: blur(20px);
 		background: rgba(84, 112, 137, 0.15);
 	}
+	// .delivery-company__decor
+	&__decor {
+		position: relative;
+		flex: 0 1 220px;
+		height: 105px;
+	}
 	// .delivery-company__line
 	&__line {
 		// position: absolute;
-		flex: 0 1 220px;
+		// flex: 0 1 220px;
 		// width: calc(100vw / (1920 / 220));
 	}
 	// .delivery-company__title
@@ -231,8 +235,14 @@
 	width: 100%;
 	max-height: 222px;
 	.delivery-company__line {
-		// top: 0;
-		// right: 0;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+	.delivery-company__circle {
+		position: absolute;
+		top: 0;
+		right: 0;
 	}
 }
 .fedex-company {
@@ -246,7 +256,15 @@
 		justify-content: flex-end;
 	}
 	.delivery-company__line {
+		position: absolute;
+		bottom: 0;
+		right: 0;
 		transform: rotateY(180deg);
+	}
+	.delivery-company__circle {
+		position: absolute;
+		top: 0;
+		left: 0;
 	}
 }
 .amazon-company {
@@ -260,7 +278,21 @@
 		justify-content: flex-end;
 	}
 	.delivery-company__line {
+		position: absolute;
+		bottom: 0;
+		right: 0;
 		transform: rotateY(180deg);
+	}
+	.delivery-company__circle {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.delivery-company__title {
+		br,
+		span {
+			display: none;
+		}
 	}
 }
 
@@ -358,6 +390,16 @@
 	}
 }
 
+.main-banner__company-point {
+	display: none;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	.circle--active {
+		transition: 0.3s ease;
+	}
+}
+
 //==========================================================================================================================================================
 // Адаптив
 @media (min-width: 1920.98px) {
@@ -368,29 +410,12 @@
 		font-size: rem(415);
 	}
 }
-
 @media (max-width: 1799.98px) {
-	.dhl-company,
-	.fedex-company,
-	.amazon-company {
-		max-width: 480px;
+	.main-banner__content {
+		// top: 30px;
 	}
-	.delivery-company__info {
-		max-width: 280px;
-	}
-	.delivery-company__line {
-		max-width: 200px;
-	}
-	.dhl-company {
-		left: -455px;
-	}
-	.amazon-company {
-		right: -455px;
-	}
-}
-@media (max-width: 1599.98px) {
-	.main-banner {
-		// min-height: 1176px;
+	.main-banner__center-img {
+		max-width: 701px;
 	}
 	.dhl-company,
 	.fedex-company,
@@ -398,21 +423,272 @@
 		max-width: 420px;
 	}
 	.delivery-company__info {
-		max-width: 260px;
+		max-width: 250px;
 	}
-	.delivery-company__line {
-		max-width: 180px;
+	.delivery-company__decor {
+		max-width: 170px;
 	}
 	.dhl-company {
 		left: -395px;
+		bottom: -50px;
+		.delivery-company__line {
+			bottom: 30px;
+		}
+	}
+	.fedex-company {
+		bottom: -210px;
+		left: 115px;
+		.delivery-company__line {
+			bottom: 30px;
+		}
 	}
 	.amazon-company {
-		right: -395px;
+		right: -400px;
+		bottom: -95px;
+		.delivery-company__line {
+			bottom: 30px;
+		}
 	}
 	.delivery-company__descr {
 		margin-bottom: 30px;
 	}
+}
+@media (max-width: 1579.98px) {
+	.main-banner__content {
+		top: 30px;
+	}
+	.main-banner__center-img {
+		// max-width: 591px;
+	}
+	.dhl-company,
+	.fedex-company,
+	.amazon-company {
+		max-width: 370px;
+	}
+	.delivery-company__decor {
+		max-width: 145px;
+	}
+	.dhl-company {
+		left: -345px;
+		bottom: 10px;
+		.delivery-company__line {
+			bottom: 40px;
+		}
+	}
+	.fedex-company {
+		left: 120px;
+		bottom: -145px;
+		.delivery-company__line {
+			bottom: 40px;
+		}
+	}
+	.amazon-company {
+		right: -355px;
+		bottom: -50px;
+		.delivery-company__line {
+			bottom: 40px;
+		}
+	}
+	.delivery-company__info {
+		padding: 10px;
+	}
+	.delivery-company__title {
+		font-size: rem(20);
+	}
+	.delivery-company__descr {
+		font-size: rem(13);
+		margin-bottom: 15px;
+	}
 	.main-banner__top {
-		margin-bottom: 468px;
+		// margin-bottom: 400px;
+	}
+}
+@media (max-width: 1439.98px) {
+	.dhl-company,
+	.fedex-company,
+	.amazon-company {
+		max-width: 320px;
+	}
+	.delivery-company__decor {
+		max-width: 130px;
+	}
+	.dhl-company {
+		left: -295px;
+		.delivery-company__line {
+			bottom: 50px;
+		}
+	}
+	.fedex-company {
+		bottom: -155px;
+		.delivery-company__line {
+			bottom: 50px;
+		}
+	}
+	.amazon-company {
+		right: -305px;
+		bottom: -65px;
+		.delivery-company__line {
+			bottom: 50px;
+		}
+	}
+}
+@media (max-width: 1339.98px) {
+	.main-banner {
+		padding-top: clamp(320px, calc(100vw / (1920 / 457)), 457px);
+	}
+	.main-banner__title {
+		top: 45px;
+	}
+	.main-banner__top {
+		margin-bottom: 615px;
+	}
+	.main-banner__content {
+		max-height: 100%;
+	}
+	.main-banner__center {
+		max-width: 701px;
+	}
+	.main-banner__center-img {
+		margin-bottom: 45px;
+	}
+	.main-banner__center-inner {
+		display: flex;
+		column-gap: 10px;
+	}
+	.main-banner__shadow {
+		bottom: -110px;
+	}
+	.dhl-company,
+	.fedex-company,
+	.amazon-company {
+		position: relative;
+		top: 0;
+		left: 0;
+		max-width: 33.333333%;
+		max-height: 100%;
+	}
+	.delivery-company__decor {
+		display: none;
+	}
+	.delivery-company__img {
+		margin-top: auto;
+	}
+	.delivery-company__inner,
+	.delivery-company__info {
+		height: 100%;
+	}
+	.delivery-company {
+		transition: 0.3s ease;
+		&.active {
+			transform: scale(1.1);
+		}
+	}
+	.amazon-company {
+		.delivery-company__title {
+			br,
+			span {
+				display: block;
+				color: transparent;
+			}
+		}
+	}
+
+	.main-banner__bottom-item:nth-child(2) {
+		flex: 0 1 430px;
+	}
+	.leading-way {
+		align-items: center;
+	}
+	.why-us__text {
+		font-size: rem(32);
+		text-wrap: balance;
+	}
+	.leading-way__count {
+		justify-content: flex-end;
+		font-size: rem(40);
+	}
+
+	.dhl-point {
+		display: block;
+		position: absolute;
+		bottom: 330px;
+		left: -15px;
+	}
+	.fedex-point {
+		display: block;
+		position: absolute;
+		bottom: 180px;
+		left: 120px;
+	}
+	.amazon-point {
+		display: block;
+		position: absolute;
+		bottom: 250px;
+		right: -25px;
+	}
+}
+
+@media (max-width: 1199.98px) {
+	.main-banner__title {
+		font-size: calc((100vw / (1200 / 210)));
+		margin-left: -16px;
+		top: 60px;
+	}
+}
+
+@media (max-width: 991.98px) {
+	.header__menu {
+		column-gap: 15px;
+	}
+
+	.main-banner__title {
+		font-size: rem(155);
+		// font-size: calc((100vw / (992 / 160)));
+		margin-left: -8px;
+	}
+	.main-banner {
+		padding-top: clamp(240px, 23.8020833333vw, 457px);
+	}
+	.main-banner__center-img {
+		display: block;
+		max-width: 601px;
+		margin: 0 auto;
+		margin-bottom: 45px;
+	}
+
+	.main-banner__company-point {
+		width: 30px;
+		height: 30px;
+	}
+	.dhl-point {
+		bottom: 325px;
+		left: 40px;
+	}
+	.fedex-point {
+		bottom: 190px;
+		left: 160px;
+	}
+	.amazon-point {
+		right: 30px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.main-banner__bg {
+		top: -50%;
+	}
+	.main-banner__bg-img {
+		// object-position: top right;
+	}
+	.main-banner__center-inner {
+		display: none;
+	}
+	.main-banner__top {
+		order: 1;
+	}
+	.main-banner__content {
+		position: relative;
+		top: -160px;
+		order: 0;
 	}
 }
