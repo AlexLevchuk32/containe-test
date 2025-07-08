@@ -19,6 +19,10 @@ function setActiveCompany() {
 					el.classList.remove('active');
 
 					if (elCircle) elCircle.setAttribute('r', '5');
+
+					// if (elCircle && window.innerWidth < 768) {
+					// 	elCircle.setAttribute('r', '2');
+					// }
 				});
 
 				companiesList.forEach((company) => {
@@ -31,6 +35,10 @@ function setActiveCompany() {
 					point.classList.add('active');
 
 					if (circle) circle.setAttribute('r', '10');
+
+					// if (circle && window.innerWidth < 768) {
+					// 	circle.setAttribute('r', '5');
+					// }
 
 					companiesList.forEach((company) => {
 						if (company) {

@@ -27,6 +27,15 @@
 							<a class="header__menu-item" href="#partners">Partners</a>
 							<a class="header__menu-item" href="#cases">Cases</a>
 							<a class="header__menu-item" href="#contacts">Contacts</a>
+
+							<div class="header__menu-btns">
+								<button class="header__login-btn" type="button">Login</button>
+
+								<button class="header__callback-btn" type="button">
+									<span class="callback-btn__text">Get in touch</span>
+									<img class="callback-btn__img" src="/icons/callback-btn-icon.svg" alt="callback button icon" />
+								</button>
+							</div>
 						</nav>
 
 						<div class="header__btns">
@@ -36,12 +45,12 @@
 							</button>
 
 							<button class="header__login-btn" type="button">Login</button>
-
-							<button class="header__burger-btn">
-								<span class="header__burger-line"></span>
-								<span class="header__burger-line"></span>
-							</button>
 						</div>
+
+						<button class="header__burger-btn">
+							<span class="header__burger-line"></span>
+							<span class="header__burger-line"></span>
+						</button>
 					</div>
 				</div>
 			</header>
@@ -49,9 +58,13 @@
 			<main class="main">
 				<section class="main-banner">
 					<div class="main-banner__bg section-bg">
-						<img class="main-banner__bg-img" src="/images/main-banner-bg.webp" alt="banner background image" />
+						<img class="main-banner__bg-img" src="/images/main-banner-bg.webp" alt="banner" />
 					</div>
-					<h1 class="main-banner__title">Portable Space</h1>
+					<h1 class="main-banner__title">
+						Portable
+						<br />
+						Space
+					</h1>
 					<div class="container main-banner__container">
 						<div class="main-banner__inner">
 							<div class="main-banner__top">
@@ -334,6 +347,9 @@
 									</div>
 								</div>
 							</div>
+							<div class="main-banner__slider">
+								<h1>SLIDER</h1>
+							</div>
 							<div class="main-banner__bottom">
 								<div class="main-banner__bottom-item bottom-item why-us">
 									<p class="bottom-item__descr why-us__descr">why us</p>
@@ -356,6 +372,8 @@
 					</div>
 				</section>
 			</main>
+
+			<div class="overlay"></div>
 		</div>
 		<script type="module" src="/src/js/main.js"></script>
 	</body>
