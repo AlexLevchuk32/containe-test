@@ -1,3 +1,5 @@
+import { mainSlider } from './mainSlider';
+
 document.addEventListener('DOMContentLoaded', () => {
 	setActiveCompany();
 });
@@ -5,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function setActiveCompany() {
 	const companyPoints = document.querySelectorAll('.main-banner__company-point');
 	const companiesList = document.querySelectorAll('.main-banner__company.delivery-company');
+	const slides = document.querySelectorAll('.main-slider__slide');
 
 	companyPoints.forEach((point) => {
 		if (point) {
@@ -45,6 +48,15 @@ function setActiveCompany() {
 							if (point.dataset.company == company.dataset.company) {
 								company.classList.add('active');
 							}
+						}
+					});
+
+					const currentCompany = point.dataset.company;
+
+					slides.forEach((slide, index) => {
+						const sliderCompany = slide.querySelector('.main-slider__company');
+						if (sliderCompany && sliderCompany.dataset.company === currentCompany) {
+							mainSlider.slideTo(index);
 						}
 					});
 				}

@@ -403,6 +403,10 @@
 	}
 }
 
+.main-banner__slider {
+	display: none;
+}
+
 //==========================================================================================================================================================
 // Адаптив
 @media (min-width: 1920.98px) {
@@ -807,9 +811,117 @@
 		bottom: 85px;
 		right: -10px;
 	}
+
+	.main-banner__slider {
+		position: relative;
+		padding-left: 10px;
+		margin-top: -40px;
+		display: block;
+		width: 100vw;
+		margin-bottom: 50px;
+		overflow: hidden;
+	}
+	.main-slider-swiper {
+		width: 100%;
+		height: 100%;
+		margin-bottom: 15px;
+	}
+	.main-slider__slide {
+		padding: 20px;
+		height: auto !important;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 5px;
+		backdrop-filter: blur(20px);
+		background: $color-header-bg;
+		.main-slider__company {
+		}
+		.main-slider__info {
+			display: flex;
+			flex-direction: column;
+			height: 160px;
+		}
+		.main-slider__title {
+			font-weight: 500;
+			font-size: rem(20);
+			line-height: 100%;
+			text-transform: uppercase;
+			margin-bottom: 10px;
+		}
+		.main-slider__descr {
+			font-weight: 400;
+			font-size: 14px;
+			line-height: 120%;
+			color: $color-grey;
+			// margin-bottom: 52px;
+		}
+		.main-slider__img {
+			margin-top: auto;
+			// max-height: 24px;
+			height: auto;
+			align-self: flex-start;
+		}
+		.amazon-slide {
+			span {
+				color: transparent;
+			}
+		}
+	}
+
+	.main-slider__controls {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		column-gap: 10px;
+	}
+
+	.main-slider-btn-prev,
+	.main-slider-btn-next {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		border: 1px solid $color-white-muted;
+		border-radius: 100%;
+		background-color: $color-header-bg;
+		backdrop-filter: blur(20px);
+		svg {
+			width: 12px;
+			height: 10px;
+			transition: 0.3s ease;
+		}
+		&:focus {
+			svg {
+				path {
+					opacity: 1;
+				}
+			}
+		}
+	}
+	.main-slider-btn-next {
+		svg {
+			transform: rotateY(180deg);
+		}
+	}
+	.main-slider-pagination {
+		display: flex;
+		column-gap: 10px;
+		width: unset !important;
+		.swiper-pagination-bullet {
+			width: 5px;
+			height: 5px;
+			background: $color-white-muted-3;
+		}
+		.swiper-pagination-bullet-active {
+			background: $color-white;
+		}
+	}
 }
 
 @media (max-width: 575.98px) {
+	.main-banner__container {
+		padding: 0 10px;
+	}
 	.main-banner__bg {
 		// top: -305px;
 	}
@@ -860,6 +972,10 @@
 		bottom: calc(100vw / (576 / 85));
 		right: -5px;
 		// right: calc(100vw / (576 / -15));
+	}
+
+	.delivery-company__info {
+		min-width: 250px;
 	}
 }
 
